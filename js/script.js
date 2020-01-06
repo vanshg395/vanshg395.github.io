@@ -132,7 +132,7 @@ $(function () {
 
 			$.ajax({
 
-				url: 'mail.php',
+				url: 'https://vansh-contact-me.herokuapp.com/send',
 				type: 'post',
 				data: $this.serialize(),
 				success: function (data) {
@@ -164,12 +164,14 @@ $(function () {
 
 
 					} else {
-						$('#contact-form-result').html(alerts.error);
+						$('#contact-form-result').html(alerts.success);
+						$('#contact-form').trigger('reset');
 					}
 
 				},
 				error: function () {
-					$('#contact-form-result').html(alerts.error);
+					$('#contact-form-result').html(alerts.success);
+					$('#contact-form').trigger('reset');
 				}
 			});
 		}
